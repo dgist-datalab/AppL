@@ -189,7 +189,7 @@ uint32_t lea_argument(int argc, char **argv){
 	uint32_t physical_page_num;
 	double cache_percentage;
     gm.fast_search=true;
-	while((c=getopt(argc,argv,"cpf"))!=-1){
+    while((c=getopt(argc,argv,"cpf"))!=-1){
 		switch(c){
 			case 'c':
 				cache_size=true;
@@ -202,9 +202,9 @@ uint32_t lea_argument(int argc, char **argv){
 				base=atoi(argv[optind]);
 				physical_page_num=base*gran/PAGESIZE;
 				break;
-            case 'f':
-                gm.fast_search=true;
-                break;
+            		case 'f':
+		                gm.fast_search=true;
+                		break;
 			case 'p':
 				cache_size=true;
 				cache_percentage=atof(argv[optind])/100;

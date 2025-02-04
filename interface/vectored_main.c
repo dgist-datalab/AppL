@@ -94,28 +94,14 @@ int main(int argc,char* argv[]){
 	{
 		case 0:
 		case -1:
-			bench_add(VECTOREDUNIQRSET,0,target_range_number, target_range_number, 0);
-			bench_add(VECTOREDRSET,0,target_range_number,target_range_number, 0);
+			bench_add(VECTOREDRW,0,target_range_number, target_range_number*2, 0);
 			break;
 		case 1: 
-			bench_add(VECTOREDUNIQRSET,0,target_range_number, target_range_number, 0);
-			bench_add(VECTOREDRGET,0,target_range_number,target_range_number, 0);
-			break;
-
-		case 2: 
-			bench_add(VECTOREDUNIQRSET,0,target_range_number,target_range_number*round, param);
-			bench_add(VECTOREDTEMPLOCALRW,0,target_range_number,target_range_number*round, param);
-			break;
-
-		case 3: 
-			bench_add(VECTOREDSPATIALRW,0,target_range_number,target_range_number*round, param);
-			break;
-		case 4:
-			bench_add(VECTOREDUNIQRSET,0,target_range_number, target_range_number, 0);
+			bench_add(VECTOREDSSET,0,target_range_number,target_range_number*round, param);
+			bench_add(VECTOREDSGET,0,target_range_number,target_range_number*round, param);
 			break;
 		default:
 			printf("type error\n");
-
 			break;
 	}
 

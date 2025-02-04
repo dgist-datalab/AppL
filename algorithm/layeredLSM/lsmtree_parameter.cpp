@@ -243,9 +243,9 @@ lsmtree_parameter lsmtree_calculate_parameter(float fpr, uint32_t target_bit, ui
 
 static void print_help(){
 	printf("-----help-----\n");
-	printf("parameters (f, m, b, t, c)\n");
+	printf("parameters (f, p, b, t, c)\n");
 	printf("-f: set read amplification (float type)\n");
-	printf("-m: memory usage percentage compare PageFTL\n");
+	printf("-p: memory usage percentage compare PageFTL\n");
 	printf("-b: target bit num for lba\n");
 	printf("-t: non zero value for parameter test\n");
 	printf("-c: cache test\n");
@@ -261,7 +261,7 @@ uint32_t lsmtree_argument_set(int argc, char **argv){
 	uint32_t total_memory_usage=29;
 	uint32_t memory_usage=total_memory_usage;
 	uint32_t cache_flag=0;
-	while((c=getopt(argc,argv,"hHmMtTfFbBGgCc"))!=-1){
+	while((c=getopt(argc,argv,"hHpPtTfFbBGgCc"))!=-1){
 		switch(c){
 			case 'h':
 			case 'H':
@@ -272,8 +272,8 @@ uint32_t lsmtree_argument_set(int argc, char **argv){
 			case 'T':
 				test_flag=atoi(argv[optind]);
 				break;
-			case 'm':
-			case 'M':
+			case 'p':
+			case 'P':
 				memory_usage=atoi(argv[optind]);
 				break;
 			case 'g':

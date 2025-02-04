@@ -441,6 +441,7 @@ void bench_update_typetime(bench_data *_d, uint8_t a_type,uint8_t l_type,uint8_t
 }
 
 void bench_type_cdf_print(bench_data *_d){
+	fprintf(stderr,"[Read page information]\n");
 	fprintf(stderr,"a_type\tBH\tl_type\tmax\tmin\tavg\tcnt\tpercentage\n");
 	for(int i = 0; i < ALGOTYPE; i++){
 		for(int j = 0; j < BUFFER_HIT; j++){

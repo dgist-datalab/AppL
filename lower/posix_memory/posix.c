@@ -145,7 +145,7 @@ void data_copy_from(uint32_t ppa, value_set *v, uint32_t type){
 		abort();
 	}
 	else{
-		memcpy(data, seg_table[ppa].storage, PAGESIZE);
+		memcpy(v->value, seg_table[ppa].storage, PAGESIZE);
 	}
 #endif
 }
@@ -175,7 +175,7 @@ void data_copy_to(uint32_t ppa, value_set *v, uint32_t type){
 		printf("cannot write! plz write before erase!\n");
 		abort();
 	}
-	memcpy(seg_table[ppa].storage,data,PAGESIZE);
+	memcpy(seg_table[ppa].storage,v->value,PAGESIZE);
 #endif
 }
 
