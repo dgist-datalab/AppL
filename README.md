@@ -3,7 +3,7 @@
 
 ## What is AppL?
 
-AppL is s a novel approximate index structure for flash based SSD, which combines memory-efficient approximate indices
+AppL is a novel approximate index structure for flash based SSD, which combines memory-efficient approximate indices
 and an LSM-tree.
 
 The original paper that introduced AppL is currently in the revision stage of [ACM/SIGOPS EuroSys 2025](https://2025.eurosys.org/).
@@ -21,7 +21,7 @@ This section introduces the main directories of AppL and configuration files.
 
 ### Main directories
 
-* `./algorithm/`: This direcotry includes FTL algorithms including AppL.
+* `./algorithm/`: This directory includes FTL algorithms including AppL.
   
   * `./algorithm/Page_ftl/`: It contains source codes for **OFTL** which keeps all indices into its DRAM.
     
@@ -35,12 +35,12 @@ This section introduces the main directories of AppL and configuration files.
     
   * `./algorithm/layeredLSM/`: It contains source codes for **AppL**
     
-    * `./algorithm/layeredLSM/translation_functions/bf_guard_mapping*`: It contains source codes for fingerpring (FP) indexing
+    * `./algorithm/layeredLSM/translation_functions/bf_guard_mapping*`: It contains source codes for fingerprint (FP) indexing
       
     * `./algorithm/layeredLSM/translation_functions/plr*` : It contains source codes for piece-wise linear regression (PLR) indexing
 
 
-* `./lower/`: This direcotry includes source codes for storage media, such as RAM drive (emulation) and Real SSD prototype
+* `./lower/`: This directory includes source codes for storage media, such as RAM drive (emulation) and Real SSD prototype
  
   * `./lower/AMF/`: It contains source codes for **Real SSD prototype**
 
@@ -110,7 +110,7 @@ $ ls ./result/
 appl_driver  dftl_driver  leaftl_driver  oftl_driver  sftl_driver
 ```
 
-To run a simple benchmark (random write and random read), we provide a bsh script, test_all_ftls.sh
+To run a simple benchmark (random write and random read), we provide a bash script, test_all_ftls.sh
 ```
 $ ./test_all_ftls.sh 
 Drivers found: ./result/appl_driver ./result/dftl_driver ./result/leaftl_driver ./result/oftl_driver ./result/sftl_driver
@@ -138,7 +138,7 @@ The `-T` parameter is an option for target benchmarks.
 For the emulation, you can check the two main results, one is the cache miss rate in read requests and the other is I/O traffic.
 
 #### Cache miss rate
-The section '[Read page information]' shows the detailed informaction of read requests
+The section '[Read page information]' shows the detailed information of read requests
 ```
 [Read page information]
 a_type	BH	l_type	max	min	avg	cnt	percentage
