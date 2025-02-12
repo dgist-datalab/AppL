@@ -201,6 +201,9 @@ As a result, the request requires:
 
 Thus, a total of three I/O operations are needed.
 
+The hit ratio—**defined as the percentage of requests requiring only one flash access**—is 78.38%. 
+
+This value is obtained by summing the requests for a_types 10, 20, and 30.
 
 **`DFTL` and `SFTL`**
 ```
@@ -219,6 +222,8 @@ a_type	BH	l_type	max	min	avg	cnt	percentage
 - a_type 3 : Cache miss with dirty eviction.
 - a_type 7 : Cache miss with dirty eviction, where garbage collection (GC) occurs for the dirty eviction.
 
+The hit ratio for this result is 19.91734%, which is calculated as the sum of the requests with a_type '0'.
+
 **`LeaFTL`**
 ```
 [Read page information]
@@ -236,6 +241,8 @@ Ones place in a_type indicates the cache miss
 
 Tens place represents the number of approximation errors occurring in the read path.
 
+The hit ratio for this result is 10.7659%, calculated as the sum of the requests with a_type '0'.
+
 
 **`OFTL`**
 ```
@@ -245,6 +252,8 @@ a_type	BH	l_type	max	min	avg	cnt	percentage
 0	1	0	16	0	0.159	2719357	32.41751%
 ```
 a_type is always 0
+
+The hit ratio of this result is always 100% because OFTL contains all indices in its DRAM memory.
 
 #### Traffic results
 
