@@ -137,7 +137,7 @@ The `-T` parameter is an option for target benchmarks.
 ### Results
 For the emulation, you can check the two main results, one is the cache miss rate in read requests and the other is I/O traffic.
 
-#### Cache miss rate
+#### Cache hit ratio
 The section '[Read page information]' shows the detailed information of read requests
 ```
 [Read page information]
